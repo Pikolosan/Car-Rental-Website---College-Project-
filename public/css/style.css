@@ -115,9 +115,9 @@ footer {
   margin: 0.8rem;
   border-color: white;
   margin-bottom: 2.5rem; /* Retain bottom margin */
-  border-top-left-radius: 1rem !important;
+  border-top-left-radius: 2rem !important;
   border-top-right-radius: 1rem !important;
-  border-bottom-right-radius: 1rem !important;
+  border-bottom-right-radius: 2rem !important;
   border-bottom-left-radius: 1rem !important;
   box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -147,6 +147,9 @@ footer {
 .show-page .card-img-top {
   box-shadow: none; /* Remove shadow for images on the show page */
   height: auto !important; /*Ensure the image height is auto on the show page */
+  transform: scale(1.28) !important;
+  /* margin-top: 60px !important; */
+  
 }
 
 .show-page .show-img {
@@ -164,6 +167,7 @@ footer {
   margin-top: 1rem;  /* Space above the text */
   margin-bottom: 1rem; /* Add vertical space between text sections */
   gap: 0.5rem;  /* Optional: Add some gap between individual elements for cleaner spacing */
+  color: #222222;
 }
 
 
