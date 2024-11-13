@@ -1,0 +1,319 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  font-weight: 400 !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 100%;
+  padding-top: px;
+  background-color: #edf1f7 !important;
+}
+.show-page .container
+ {
+  max-width: 100%;
+}
+
+footer {
+  margin-top: auto;
+  min-width: 100%;
+  z-index: 0;
+}
+
+.container {
+  min-width: 95%;
+  
+}
+
+/* Scrollbar */
+/* Width */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+/* Handle on hover */
+*::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Navbar  */
+.navbar {
+  height: 4rem;
+  background-color: #edf1f7 !important;
+}
+
+.navbar .fa {
+  color: #fe424d;
+  font-size: 1.8rem;
+}
+
+.navbar .fa:hover {
+  animation: fa-bounce 1s;
+}
+
+.nav-link {
+  color: #222222 !important;
+}
+.nav-link:hover {
+  color: #0056b3 !important; /* Change this color to whatever hover color you prefer */
+  font-weight: 500;
+}
+
+/* Footer */
+
+
+.f-info-links a {
+  text-decoration: none;
+  color: #222222 !important;
+}
+
+.f-info-links a:hover {
+  text-decoration: underline;
+}
+
+.f-info-links,
+.f-info-socials,
+.f-info-brand {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.f-info-socials i {
+  font-size: 1.2rem;
+  margin-right: 0.7rem;
+}
+
+.f-info {
+  text-align: center;
+  height: 8rem;
+  background-color: white ;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: space-evenly;
+  min-width: 100vh;
+}
+
+/* Cards */
+/* General styling for images */
+.card-img-top {
+  border-top-left-radius: 1rem !important;
+  border-top-right-radius: 1rem !important;
+  width: 100% !important;
+  object-fit: cover !important;
+  transition: transform 0.3s ease; /* Adding transition for hover effect */
+}                                             
+
+
+/* Card hover effect for index page (scale the entire card, not just the image) */
+.cardHolder .listing-card {
+  margin: 0.8rem;
+  border-color: white;
+  margin-bottom: 2.5rem; /* Retain bottom margin */
+  border-top-left-radius: 1rem !important;
+  border-top-right-radius: 1rem !important;
+  border-bottom-right-radius: 1rem !important;
+  border-bottom-left-radius: 1rem !important;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  padding: 1rem;
+  background-color: #f9f9f9 !important;
+}
+
+.cardHolder .listing-card:hover {
+  transform: scale(1.05); /* Scale the entire card */
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle shadow to enhance the effect */
+}
+
+/* Show page-specific styling (no hover effect here) */
+.show-page .listing-card {
+  margin-bottom: 1rem;
+  box-shadow: none;
+  border: none !important;
+  background-color: #edf1f7;
+}
+
+.show-page .listing-card:hover {
+  transform: none; /* Remove hover scale effect on show page */
+  box-shadow: 0 ; /* Optional: No shadow on hover */
+}
+
+/* Show page specific image styling */
+.show-page .card-img-top {
+  box-shadow: none; /* Remove shadow for images on the show page */
+  height: auto !important; /*Ensure the image height is auto on the show page */
+}
+
+.show-page .show-img {
+  border-radius: 1rem !important;
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); */
+  object-fit: contain; /* Let the image fill the container without distortion */
+}
+
+/* Show page text styles */
+.show-page .card-body .card-text {
+  display: flex;
+  flex-direction: column;  /* Stack items vertically */
+  align-items: flex-start; /* Aligns items to the start of the container (top) */
+  text-align: left; /* Aligns text to the left */
+  margin-top: 1rem;  /* Space above the text */
+  margin-bottom: 1rem; /* Add vertical space between text sections */
+  gap: 0.5rem;  /* Optional: Add some gap between individual elements for cleaner spacing */
+}
+
+
+.show-img.card-img-top {
+  border-radius: 1rem !important;
+}
+
+/* Responsive Design: Adjust layout for smaller screens */
+@media (max-width: 767px) {
+  .card-text {
+    flex-direction: column; /* Stack the title and price vertically on small screens */
+    align-items: flex-start; /* Align left */
+  }
+
+  .card-text b {
+    margin-bottom: 0.5rem; /* Optional: Add space between title and price on mobile */
+  }
+}
+
+.listing-links {
+  text-decoration: none;
+}
+
+.add-btn {
+  background-color: #fe395c !important;
+  border: none !important;
+}
+
+.edit-btn {
+  background-color: #fe395c !important;
+  border: none !important;
+}
+
+/* Show Page */
+.show-img {
+  height: 70vh;
+  max-width: 60vh;
+}
+.show-img {
+  transform: none !important;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.edit-btn {
+  color: #fe424d;
+}
+
+.range-container {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  position: absolute;
+  top: -1px; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.range-container:hover .tooltip,
+.tooltip.show {
+  opacity: 1;
+}
+
+.review-card {
+  padding: 5px;
+}
+
+.map-height {
+  height: 400px;
+  margin-bottom: 30px;
+}
+
+#Logo-txt{
+  margin-top: 5px;
+  font-weight: 900;
+  color: #fe395c;
+}
+@media (max-width: 992px) {
+  body {
+    padding-top: 0; 
+  }
+  .navbar-nav .nav-link:last-child {
+    margin-bottom: 15px;
+  }
+  .navbar-collapse {
+    max-height: 300px; 
+    overflow-y: auto; 
+  }
+  .navbar-collapse {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    background-color: white; 
+  }
+
+  .nav-link:hover{
+    text-decoration: underline;
+  }
+
+  .navbar-nav {
+    padding-bottom: 10px; 
+  }
+}
+
+.No-Msg{
+  margin-top: 95px !important;
+}
+
+/* Search */ 
+.search {
+  display: inline-block;
+  position: relative;
+}
+
+.search input[type="text"] {
+  width: 250px;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.search button[type="submit"] {
+  background-color: #fe395c;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: .9s ease;
+}
+
+.search button[type="submit"]:hover {
+  transform: scale(1);
+  color: rgb(255, 255, 255);
+  background-color: rgb(214, 4, 4);
+}

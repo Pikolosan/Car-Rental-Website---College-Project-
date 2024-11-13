@@ -1,0 +1,33 @@
+<% layout('./layouts/boilerplate') -%>
+
+<h1 class="mt-5">Book Your Car Rental</h1>
+<p>Listing: <%= listing.title %></p>
+
+<form method="POST" action="/bookings" class="mb-5">
+    <!-- Use listingId passed from the route -->
+    <input type="hidden" name="carListingId" value="<%= listingId %>">
+
+    <div class="mb-3">
+        <label for="startDate" class="form-label">Start Date:</label>
+        <input type="date" id="startDate" name="startDate" class="form-control" required>
+    </div>
+    
+    <div class="mb-3">
+        <label for="endDate" class="form-label">End Date:</label>
+        <input type="date" id="endDate" name="endDate" class="form-control" required>
+    </div>
+    
+    <div class="mb-3">
+        <label for="pickupLocation" class="form-label">Pickup Location:</label>
+        <input type="text" id="pickupLocation" name="pickupLocation" class="form-control" required>
+    </div>
+
+    <!-- Display car type (read-only) instead of taking input -->
+    <div class="mb-3">
+        <label for="carType" class="form-label">Car Type:</label>
+        <input type="text" id="carType" name="carType" class="form-control" value="<%= listing.carType %>" readonly>
+    </div>
+
+    <button type="submit" class="btn btn-primary mb-5">Book Now</button>
+</form>
+

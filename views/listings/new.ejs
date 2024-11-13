@@ -1,0 +1,139 @@
+<% layout('./layouts/boilerplate') -%>
+<body>
+  <br><br>
+  <div class="row mb-5">
+    <div class="col-8 offset-2">
+      <h3>Create a New Listing</h3>
+      <form method="POST" action="/listings" class="needs-validation" novalidate enctype="multipart/form-data">        
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input name="listing[title]" placeholder="Enter a catchy title" type="text" class="form-control" required />
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Field cannot be empty!</div>
+        </div>
+        
+        <!-- <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea name="listing[description]" placeholder="Enter description" class="form-control" required></textarea>
+          <div class="invalid-feedback">Field cannot be empty!</div>
+        </div> -->
+        
+        <div class="mb-3">
+          <label for="image" class="form-label">Upload Image</label>
+          <input name="listing[image]" type="file" class="form-control" /> 
+          <div class="invalid-feedback">Field cannot be empty!</div>
+        </div>
+
+        <div class="row">
+          <div class="mb-3 col-md-4">
+            <label for="pricePerDay" class="form-label">Price Per Day</label>
+            <input name="listing[pricePerDay]" placeholder="1,000" type="number" class="form-control" required />
+            <div class="invalid-feedback">Field cannot be empty!</div>
+          </div>
+          
+          <div class="mb-3 col-md-8">
+            <label for="location" class="form-label">Location</label>
+            <input name="listing[location]" placeholder="Enter location" type="text" class="form-control" required />
+            <div class="invalid-feedback">Field cannot be empty!</div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="carType" class="form-label">Car Type</label>
+          <select id="carType" name="listing[carType]" class="form-control" required>
+            <option value="" disabled selected>Select Car Type</option>
+            <option value="SUV">SUV</option>
+            <option value="Sedan">Sedan</option>
+            <option value="Truck">Truck</option>
+            <option value="Hatchback">Hatchback</option>
+            <option value="Convertible">Convertible</option>
+            <option value="Coupe">Coupe</option>
+          </select>
+          <div class="invalid-feedback">Please select a car type!</div>
+        </div>
+
+        <!-- Passenger Capacity -->
+        <div class="mb-3">
+          <label for="passengerCapacity" class="form-label">Passenger Capacity</label>
+          <input name="listing[passengerCapacity]" type="number" class="form-control" placeholder="Enter number of passengers" required />
+          <div class="invalid-feedback">Field cannot be empty!</div>
+        </div>
+
+        <!-- Fuel Type -->
+        <div class="mb-3">
+          <label for="fuelType" class="form-label">Fuel Type</label>
+          <select id="fuelType" name="listing[fuelType]" class="form-control" required>
+            <option value="" disabled selected>Select Fuel Type</option>
+            <option value="Petrol">Petrol</option>
+            <option value="Diesel">Diesel</option>
+            <option value="Hybrid">Hybrid</option>
+            <option value="Electric">Electric</option>
+          </select>
+          <div class="invalid-feedback">Please select a fuel type!</div>
+        </div>
+
+        <!-- Transmission Type -->
+        <div class="mb-3">
+          <label for="transmissionType" class="form-label">Transmission Type</label>
+          <select id="transmissionType" name="listing[transmissionType]" class="form-control" required>
+            <option value="" disabled selected>Select Transmission Type</option>
+            <option value="Automatic">Automatic</option>
+            <option value="Manual">Manual</option>
+          </select>
+          <div class="invalid-feedback">Please select a transmission type!</div>
+        </div>
+        
+        <div class="mb-3">
+          <label for="categories" class="form-label">Categories</label><br>
+          
+          <!-- Luxury Category -->
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="listing[categories][]" value="Luxury" id="luxury">
+            <label class="form-check-label" for="luxury">Luxury</label>
+          </div>
+        
+          <!-- Economy Category -->
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="listing[categories][]" value="Economy" id="economy">
+            <label class="form-check-label" for="economy">Economy</label>
+          </div>
+        
+          <!-- Sport Category -->
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="listing[categories][]" value="Sport" id="sport">
+            <label class="form-check-label" for="sport">Sport</label>
+          </div>
+        
+          <!-- Electric Category -->
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="listing[categories][]" value="Electric" id="electric">
+            <label class="form-check-label" for="electric">Electric</label>
+          </div>
+        
+          <!-- Family Category -->
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="listing[categories][]" value="Family" id="family">
+            <label class="form-check-label" for="family">Family</label>
+          </div>
+        
+          <!-- Offroad Category -->
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="listing[categories][]" value="Offroad" id="offroad">
+            <label class="form-check-label" for="offroad">Offroad</label>
+          </div>
+        
+          <div class="invalid-feedback">Please select at least one category!</div>
+        </div>
+        
+
+        <div class="mb-4">
+          <label for="year" class="form-label">Year of Manufacture</label>
+          <input name="listing[year]" placeholder="Enter year (e.g., 2020)" type="number" class="form-control" required min="1886" max="<%= new Date().getFullYear() %>"/>
+          <div class="invalid-feedback">Please enter a valid year!</div>
+        </div>
+
+        <button class="btn btn-dark add-btn mb-5">Add</button>
+      </form>
+    </div>
+  </div>
+</body>

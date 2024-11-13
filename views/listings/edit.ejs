@@ -1,0 +1,87 @@
+<% layout('./layouts/boilerplate') -%>
+<body>
+  <div class="row mt-5">
+    <div class="col-8 offset-2">
+      <h3>Edit your Listing</h3>
+      <form method="POST" action="/listings/<%= listing._id %>?_method=PUT" class="needs-validation" novalidate enctype="multipart/form-data">
+        
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input name="listing[title]" value="<%= listing.title %>" type="text" class="form-control" required />
+          <div class="invalid-feedback">Field cannot be empty!</div>
+        </div>
+
+        <!-- <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea name="listing[description]" class="form-control" ><%= listing.description %></textarea>
+          <div class="invalid-feedback">Field cannot be empty!</div>
+        </div> -->
+
+        <div class="mb-3">
+          Original Listing Image <br>
+          <img src="<%= orgImgUrl %>">
+        </div>
+        
+        <div class="mb-3">
+          <label for="image" class="form-label">Upload Image</label>
+          <input name="listing[image]" type="file" class="form-control" />
+        </div>
+
+        <div class="row">
+          <div class="mb-3 col-md-4">
+            <label for="pricePerDay" class="form-label">Price Per Day</label>
+            <input name="listing[pricePerDay]" value="<%= listing.pricePerDay %>" type="number" class="form-control" required />
+            <div class="invalid-feedback">Field cannot be empty!</div>
+          </div>
+
+          <div class="mb-3 col-md-8">
+            <label for="location" class="form-label">Location</label>
+            <input name="listing[location]" value="<%= listing.location %>" type="text" class="form-control" required />
+            <div class="invalid-feedback">Field cannot be empty!</div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="carType" class="form-label">Car Type</label>
+          <select name="listing[carType]" class="form-select" required>
+            <option value="SUV" <%= listing.carType === 'SUV' ? 'selected' : '' %>>SUV</option>
+            <!-- Repeat for other car types -->
+          </select>
+          <div class="invalid-feedback">Please select a car type!</div>
+        </div>
+
+        <div class="mb-4">
+          <label for="year" class="form-label">Year of Manufacture</label>
+          <input name="listing[year]" value="<%= listing.year %>"  type="number" class="form-control" required min="1886" max="<%= new Date().getFullYear() %>"/>
+          <div class="invalid-feedback">Please enter a valid year!</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="passengerCapacity" class="form-label">Passenger Capacity</label>
+          <input name="listing[passengerCapacity]" value="<%= listing.passengerCapacity %>" type="number" class="form-control" required />
+          <div class="invalid-feedback">Field cannot be empty!</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="fuelType" class="form-label">Fuel Type</label>
+          <select name="listing[fuelType]" class="form-select" required>
+            <option value="Petrol" <%= listing.fuelType === 'Petrol' ? 'selected' : '' %>>Petrol</option>
+            <!-- Repeat for other fuel types -->
+          </select>
+          <div class="invalid-feedback">Please select a fuel type!</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="transmissionType" class="form-label">Transmission Type</label>
+          <select name="listing[transmissionType]" class="form-select" required>
+            <option value="Automatic" <%= listing.transmissionType === 'Automatic' ? 'selected' : '' %>>Automatic</option>
+            <!-- Repeat for other transmission types -->
+          </select>
+          <div class="invalid-feedback">Please select a transmission type!</div>
+        </div>
+        
+        <button class="btn btn-primary mt-3 mb-5">Update</button>
+      </form>
+    </div>
+  </div>
+</body>

@@ -1,0 +1,32 @@
+<% layout('./layouts/boilerplate') -%>
+
+<div class="container mt-4">
+    <h1 class="mb-4">My Bookings</h1>
+    <% if (bookings.length > 0) { %>
+        <div class="row">
+            <% bookings.forEach(booking => { %>
+                <div class="col-12 mb-5">
+                    <div class="card px-3">
+                        <div class="card-body flex mt-3 mb-3">
+                            <h5 class="card-title">Listing: <%= booking.carListingId.title %></h5>
+                            <p class="card-text">Start Date: <%= booking.startDate.toDateString() %></p>
+                            <p class="card-text">End Date: <%= booking.endDate.toDateString() %></p>
+                            <p class="card-text">Pickup Location: <%= booking.pickupLocation %></p>
+                            <p class="card-text">Car Type: <%= booking.carType %></p>
+                            <p class="card-text">Date Created: <%= booking.createdAt.toDateString() %></p>
+                            <div class="d-flex justify-content-end">
+                                <form method="POST" action="/bookings/<%= booking._id %>?_method=DELETE">
+                                    <button class="btn btn-danger btn-sm">Cancel Booking</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    <% } else { %>
+        <div class="alert alert-warning mt-3">
+            You have no bookings yet.
+        </div>
+    <% } %>
+</div>
