@@ -47,6 +47,7 @@ footer {
 .navbar .fa {
   color: #fe424d;
   font-size: 1.8rem;
+  height: 10px;
 }
 
 .navbar .fa:hover {
@@ -291,10 +292,10 @@ footer {
 }
 
 .search input[type="text"] {
-  width: 250px;
+  width: 300px;
   padding: 10px;
   border: none;
-  border-radius: 20px;
+  border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -304,16 +305,169 @@ footer {
   color: #fff;
   cursor: pointer;
   padding: 10px 15px;
-  border-radius: 20px;
+  border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   position: absolute;
-  top: 0;
-  right: 0;
-  transition: .9s ease;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  top: 5px;
+  right: 15px;
+  transition: .5s ease;
 }
 
 .search button[type="submit"]:hover {
-  transform: scale(1);
+  transform: scale(1.1);
   color: rgb(255, 255, 255);
   background-color: rgb(214, 4, 4);
+}
+
+/* Home Page */
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  min-width: 100%;
+  margin: 0 auto;
+}
+
+/* Style for the text content */
+.text-container {
+  height: auto;
+  flex: 1;
+  text-align: left;
+  padding-right: 80px;
+}
+
+.text-container p {
+  font-size: 1rem; /* Increase font size */
+  font-family: 'Arial', sans-serif; /* Change font style */
+  color: #333; /* Text color */
+  margin-bottom: 10px;
+}
+
+/* Style for the text heading */
+.text-heading {
+  font-size: 3em;
+  font-weight: bold;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; /* Change font style */
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Image container styling */
+.image-container {
+  flex: 1;
+  max-width: 40rem;
+  margin-left: auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Image styling */
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Get Started Section Styles */
+.section {
+  padding: 50px 0;
+  background-color: #f4f4f4;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.section-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.get-start-list {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0;
+  flex-wrap: wrap; /* Allow wrapping of list items on small screens */
+}
+
+.get-start-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  justify-content: center;
+  text-align: center;
+  transition: transform 0.3s ease;
+  margin-bottom: 20px; /* Space between cards */
+}
+
+.get-start-card:hover {
+  transform: scale(1.05); /* Scale the entire card */
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-icon {
+  font-size: 30px;
+  margin-bottom: 15px;
+  width: 55px;
+  height: 40px;
+  border-radius: 1rem ;
+  margin-left: 40%;
+}
+
+.icon-1{
+  color:#d23787;
+  background-color: rgba(210, 55, 135, 0.5); /* 50% opacity */
+}
+.icon-2{
+  font-size: 33px;
+  color:#55b0ec;
+  background-color: rgba(85, 176, 236, 0.5); /* 50% opacity */
+
+
+}
+.icon-3{
+  color:#29b372;
+  background-color: rgba(41, 179, 114, 0.5); /* 50% opacity */
+}
+.icon-4{
+  font-size: 33px;
+  color:#8050d3;
+  background-color: rgba(128, 80, 211, 0.5);
+}
+
+.card-title {
+  font-size: 1.5em;
+  /* font-weight: bold; */
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 1em;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.card-link {
+  font-size: 1.2em;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
+
+/* Ensure the Get Started section is displayed properly without flex issues */
+.get-start-container {
+  display: block; /* Set to block to avoid flex issues */
+  align-items: center;
 }
