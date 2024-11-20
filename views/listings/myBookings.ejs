@@ -13,6 +13,7 @@
                             <p class="card-text">End Date: <%= booking.endDate.toDateString() %></p>
                             <p class="card-text">Pickup Location: <%= booking.pickupLocation %></p>
                             <p class="card-text">Car Type: <%= booking.carType %></p>
+                            <p class="card-text">Car Title: <%=  %></p>
                             <p class="card-text">Date Created: <%= booking.createdAt.toDateString() %></p>
                             <div class="d-flex justify-content-end">
                                 <form method="POST" action="/bookings/<%= booking._id %>?_method=DELETE">
