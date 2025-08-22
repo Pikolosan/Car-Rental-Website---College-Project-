@@ -94,7 +94,7 @@ router.post('/', async (req, res) => {
 
         await booking.save(); // Save the booking to the database
 
-        req.flash("success", "Booking confirmed! Please proceed with the payment.");
+        req.flash("success", "Booking confirmed!");
         res.redirect(session.url); // Redirect user to Stripe checkout
 
     } catch (error) {
