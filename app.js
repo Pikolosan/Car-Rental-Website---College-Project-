@@ -21,7 +21,7 @@ const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 const bookingRoutes = require('./routes/bookings');
 // MongoDB connection URL
-const MONGO_URL = "mongodb://127.0.0.1:27017/car_rental";
+const MONGO_URL = process.env.MONGODB_URL;
 
 // Connect to MongoDB
 main()
