@@ -21,7 +21,7 @@ const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 const bookingRoutes = require('./routes/bookings');
 // MongoDB connection URL
-const MONGO_URL = process.env.MONGODB_URL;
+const MONGO_URL = process.env.MONGO_URL;
 
 // Connect to MongoDB
 main()
